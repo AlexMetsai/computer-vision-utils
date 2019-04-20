@@ -23,3 +23,16 @@ if (x!='y' and x!='Y'): exit()
 # and extract all of its frames inside.
 for file is os.listdir("."):
     if file.endswith(".mp4"):
+        print("Processing " + file)
+        video_capture = cv2.VideoCapture(file)
+        sucess, image = video_capture.read()
+        folder_name = file.replace(".mp4", "")  # Delete the .mp4 ext
+        os.mkdir(folder_name)
+        count = 1
+        success = True
+        while success:
+            cv2.imwrite(folder_name + "/%d.jpg" % count, image)
+            success, image = video_capture.read()   # Read next frame
+            count+=1
+
+print("Extraction finished")
