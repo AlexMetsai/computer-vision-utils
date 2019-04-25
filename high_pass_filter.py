@@ -17,6 +17,16 @@ def high_pass(im):
     # instance is subtracted from the original image. A gaussian
     # filter "blurs" the original and acts as the low pass unit.
     lowpass_im = ndimage.gaussian_filter(im,3)
-    highpass_im = im- lowpass_im
+    highpass_im = im - lowpass_im
     return(highpass_im)
 
+if __name__ == '__main__':
+  
+  # Continue only if user replies "Yes"
+  print("\nThis script will recursively manipulate all images under your"+
+  	" current working directory. Are you sure you want to continue? (y/n)")
+  x= input()
+  if (x!='y' and x!="Y"): exit()
+  
+  # Find all files bellow the working directory and pass them  
+  # through a high pass filter, replacing their originals.
