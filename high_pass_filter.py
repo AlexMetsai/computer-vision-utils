@@ -43,3 +43,4 @@ if __name__ == '__main__':
         
         # Save image
         imsave(im_path, filtered_im)
+print("All images processed successfully.")
