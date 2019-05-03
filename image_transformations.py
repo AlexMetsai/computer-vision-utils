@@ -9,5 +9,40 @@
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version.
 
+import numpy as np
+import cv2
+import os
+
+def rotate_90_degrees_folder(folder_name):
+  
+  for file in os.listdir(folder_name):
+    
+    # read image from disc
+    im = cv2.imread(folder_name + "/" + file)
+    
+    # rotate by 90 degrees
+    im = np.rot90(im,-1)
+    
+    # replace the original wth the rotated image
+    cv2.imwrite(folder_name + "/" + file, im)
+    
+    print("All frames rotated successfully.")
+
+def rotate_180_degrees_folder(folder_name):
+  
+  for file in os.listdir(folder_name):
+    
+    # read image from disc
+    im = cv2.imread(folder_name + "/" + file)
+    
+    # rotate by 180 degrees
+    im = np.rot90(im,-1)
+    im = np.rot90(im,-1)
+    
+    # replace the original wth the rotated image
+    cv2.imwrite(folder_name + "/" + file, im)
+    
+    print("All frames rotated successfully.")
 
 if __name__ == "__main__":
+  pass
