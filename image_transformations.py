@@ -13,7 +13,7 @@ import numpy as np
 import cv2
 import os
 
-def rotate_90_degrees_folder(folder_name, k=1):
+def rotate_90_degrees(folder_name, k=1):
   
   for file in os.listdir(folder_name):
     
@@ -30,7 +30,7 @@ def rotate_90_degrees_folder(folder_name, k=1):
     
     print("All frames rotated successfully.")
 
-def rotate_180_degrees_folder(folder_name):
+def rotate_180_degrees(folder_name):
   
   for file in os.listdir(folder_name):
     
@@ -45,6 +45,9 @@ def rotate_180_degrees_folder(folder_name):
     cv2.imwrite(folder_name + "/" + file, im)
     
     print("All frames rotated successfully.")
+
+def horizontal_flip():
+  # TODO
 
 if __name__ == "__main__":
   pass
