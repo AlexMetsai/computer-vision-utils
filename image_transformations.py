@@ -13,7 +13,7 @@ import numpy as np
 import cv2
 import os
 
-def rotate_90_degrees_folder(folder_name):
+def rotate_90_degrees_folder(folder_name, k=1):
   
   for file in os.listdir(folder_name):
     
@@ -21,7 +21,9 @@ def rotate_90_degrees_folder(folder_name):
     im = cv2.imread(folder_name + "/" + file)
     
     # rotate by 90 degrees
-    im = np.rot90(im,-1)
+    # k is the number of rotations.
+    # pass k = -1 for negative rotation
+    im = np.rot90(im, k)
     
     # replace the original wth the rotated image
     cv2.imwrite(folder_name + "/" + file, im)
@@ -36,8 +38,8 @@ def rotate_180_degrees_folder(folder_name):
     im = cv2.imread(folder_name + "/" + file)
     
     # rotate by 180 degrees
-    im = np.rot90(im,-1)
-    im = np.rot90(im,-1)
+    im = np.rot90(im)
+    im = np.rot90(im)
     
     # replace the original wth the rotated image
     cv2.imwrite(folder_name + "/" + file, im)
