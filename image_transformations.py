@@ -28,7 +28,7 @@ def rotate_90_degrees(folder_name, k=1):
     # replace the original wth the rotated image
     cv2.imwrite(folder_name + "/" + file, im)
     
-    print("All frames rotated successfully.")
+    print("All images rotated successfully.")
 
 def rotate_180_degrees(folder_name):
   
@@ -41,10 +41,10 @@ def rotate_180_degrees(folder_name):
     im = np.rot90(im)
     im = np.rot90(im)
     
-    # replace the original wth the rotated image
+    # replace the original with the rotated image
     cv2.imwrite(folder_name + "/" + file, im)
     
-    print("All frames rotated successfully.")
+    print("All images rotated successfully.")
 
 def horizontal_flip(folder_name):
   # TODO
@@ -52,6 +52,14 @@ def horizontal_flip(folder_name):
     
     # read image from disc
     im = cv2.imread(folder_name + "/" + file)
+    
+    # flip horizontaly
+    #TODO
+    
+    # replace the original with the fliped image
+    cv2.imwrite(folder_name + "/" + file, im)
+    
+    print("All images flipped successfully.")
 
 
 if __name__ == "__main__":
