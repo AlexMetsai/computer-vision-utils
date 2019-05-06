@@ -30,6 +30,7 @@ def rotate_90_degrees(folder_name, k=1):
     
     print("All images rotated successfully.")
 
+
 def rotate_180_degrees(folder_name):
   
   for file in os.listdir(folder_name):
@@ -45,6 +46,7 @@ def rotate_180_degrees(folder_name):
     cv2.imwrite(folder_name + "/" + file, im)
     
     print("All images rotated successfully.")
+
 
 def horizontal_flip(folder_name):
   
@@ -62,6 +64,20 @@ def horizontal_flip(folder_name):
     print("All images flipped successfully.")
 
 
+def vertical_flip(folder_name):
+  
+  for file in os.listdir(folder_name):
+    
+    # read image from disc
+    im = cv2.imread(folder_name + "/" + file)
+    
+    # flip vertically
+    im = cv2.flip(im, 0)
+    
+    # replace the original with the fliped image
+    cv2.imwrite(folder_name + "/" + file, im)
+    
+    print("All images flipped successfully.")
 
 
 if __name__ == "__main__":
