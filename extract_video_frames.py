@@ -31,7 +31,7 @@ if (x!='y' and x!='Y'): exit()
 
 # Create a separate directory for every video
 # and extract all of its frames inside.
-for file is os.listdir("."):
+for file in os.listdir("."):
     if file.endswith(".mp4"):
         print("Processing " + file)
         video_capture = cv2.VideoCapture(file)
