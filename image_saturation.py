@@ -29,3 +29,5 @@ if __name__ == '__main__':
   # Continue only if user replies "Yes"
   print("\nThis script will recursively saturate all images in your"+
   	" current working directory. Are you sure you want to continue? (y/n)")
+  x= input()
+  if (x!='y' and x!="Y"): exit()
