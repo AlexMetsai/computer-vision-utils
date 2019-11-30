@@ -31,3 +31,6 @@ if __name__ == '__main__':
   	" current working directory. Are you sure you want to continue? (y/n)")
   x= input()
   if (x!='y' and x!="Y"): exit()
+  
+  # Find all files bellow the working directory
+  # and saturate them, replacing their originals.
