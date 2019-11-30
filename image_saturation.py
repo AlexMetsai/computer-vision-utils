@@ -33,4 +33,4 @@ if __name__ == '__main__':
   if (x!='y' and x!="Y"): exit()
   
   # Find all files bellow the working directory
-  # and saturate them, replacing their originals.
+  # and apply saturation, replacing their originals.
