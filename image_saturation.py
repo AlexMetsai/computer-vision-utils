@@ -1,5 +1,6 @@
 '''
-!!! ADD BRIEF INFO !!!
+Search recursively for all images in the current working directory 
+and apply saturation, with regard to a user defined threshold.
 
 Copyright (C) 2019 Alexandros I. Metsai
 alexmetsai@gmail.com
