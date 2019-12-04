@@ -35,3 +35,4 @@ if __name__ == '__main__':
   
   # Find all files bellow the working directory
   # and apply saturation, replacing their originals.
+  for root, dirs, files in os.walk("."):
