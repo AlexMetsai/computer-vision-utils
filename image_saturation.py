@@ -41,3 +41,5 @@ if __name__ == '__main__':
   for root, dirs, files in os.walk("."):
     for f in files:
       if f.endswith(".jpg"):
+        
+        # load image
