@@ -24,6 +24,9 @@ from scipy.misc import imsave, imread
 
 # Define saturation threshold
 THRESHOLD = 40
+# You can use other or a number of formats. To do
+# so, create a list, example: [".jpg", ".png"]
+ext = ".jpg" 
 
 if __name__ == '__main__':
   
@@ -36,3 +39,5 @@ if __name__ == '__main__':
   # Find all files bellow the working directory
   # and apply saturation, replacing their originals.
   for root, dirs, files in os.walk("."):
+    for f in files:
+      if f.endswith(".jpg"):
