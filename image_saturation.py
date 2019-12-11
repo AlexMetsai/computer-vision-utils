@@ -40,6 +40,6 @@ if __name__ == '__main__':
   # and apply saturation, replacing their originals.
   for root, dirs, files in os.walk("."):
     for f in files:
-      if f.endswith(".jpg"):
+      if f.endswith(ext):
         
         # load image
