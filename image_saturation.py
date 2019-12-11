@@ -43,3 +43,5 @@ if __name__ == '__main__':
       if f.endswith(ext):
         
         # load image
+        # TEST MSGS 
+        # CNSR INFO
