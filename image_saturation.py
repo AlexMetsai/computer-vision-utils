@@ -43,3 +43,5 @@ if __name__ == '__main__':
       if f.endswith(ext):
         
         # load image
+        im_path = os.path.relpath(os.path.join(root, f), ".")
+        im = imread(im_path)
