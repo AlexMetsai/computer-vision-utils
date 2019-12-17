@@ -45,3 +45,8 @@ if __name__ == '__main__':
         # load image
         im_path = os.path.relpath(os.path.join(root, f), ".")
         im = imread(im_path)
+        
+        # saturate image
+        # function definition
+        
+        # Save image
