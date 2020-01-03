@@ -51,3 +51,4 @@ if __name__ == '__main__':
         
         # Save image
         imsave = (im_path, im)
+  print("All images saturated successfully.")
