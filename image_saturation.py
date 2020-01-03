@@ -50,3 +50,4 @@ if __name__ == '__main__':
         # function definition
         
         # Save image
+        imsave = (im_path, im)
