@@ -32,25 +32,26 @@ def high_pass(im):
 
 if __name__ == '__main__':
   
-  # Continue only if user replies "Yes"
-  print("\nThis script will recursively manipulate all images under your"+
-  	" current working directory. Are you sure you want to continue? (y/n)")
-  x= input()
-  if (x!='y' and x!="Y"): exit()
+    # Continue only if user replies "Yes"
+    print("\nThis script will recursively manipulate all images under your"+
+  	  " current working directory. Are you sure you want to continue? (y/n)")
+    x= input()
+    if (x!='y' and x!="Y"): exit()
   
-  # Find all files bellow the working directory and pass them  
-  # through a high pass filter, replacing their originals.
-  for root, dirs, files in os.walk("."):
-    for f in files:
-      if f.endswith(".jpg"):
-        # load image
-        im_path = os.path.relpath(os.path.join(root, f), ".")
-        print("Filtering " + im_path)
-        im = imread(im_path)
-        
-        # apply the high pass filter
-        filtered_im = high_pass(im)
-        
-        # Save image
-        imsave(im_path, filtered_im)
-print("All images processed successfully.")
+    # Find all files bellow the working directory and pass them  
+    # through a high pass filter, replacing their originals.
+    for root, dirs, files in os.walk("."):
+        for f in files:
+            if f.endswith(".jpg"):
+                
+                # load image
+                im_path = os.path.relpath(os.path.join(root, f), ".")
+                print("Filtering " + im_path)
+                im = imread(im_path)
+                
+                # apply the high pass filter
+                filtered_im = high_pass(im)
+                
+                # Save image
+                imsave(im_path, filtered_im)
+    print("All images processed successfully.")
