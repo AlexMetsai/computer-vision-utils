@@ -30,25 +30,25 @@ ext = ".jpg"
 
 if __name__ == '__main__':
   
-  # Continue only if user replies "Yes"
-  print("\nThis script will recursively saturate all images in your"+
-  	" current working directory. Are you sure you want to continue? (y/n)")
-  x= input()
-  if (x!='y' and x!="Y"): exit()
+    # Continue only if user replies "Yes"
+    print("\nThis script will recursively saturate all images in your"+
+  	  " current working directory. Are you sure you want to continue? (y/n)")
+    x= input()
+    if (x!='y' and x!="Y"): exit()
   
-  # Find all files bellow the working directory
-  # and apply saturation, replacing their originals.
-  for root, dirs, files in os.walk("."):
-    for f in files:
-      if f.endswith(ext):
+    # Find all files bellow the working directory
+    # and apply saturation, replacing their originals.
+    for root, dirs, files in os.walk("."):
+        for f in files:
+            if f.endswith(ext):
         
-        # load image
-        im_path = os.path.relpath(os.path.join(root, f), ".")
-        im = imread(im_path)
+                # load image
+                im_path = os.path.relpath(os.path.join(root, f), ".")
+                im = imread(im_path)
+                
+                # saturate image
+                # function definition
         
-        # saturate image
-        # function definition
-        
-        # Save image
-        imsave = (im_path, im)
-  print("All images saturated successfully.")
+                # Save image
+                imsave = (im_path, im)
+    print("All images saturated successfully.")
