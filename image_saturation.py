@@ -47,8 +47,14 @@ if __name__ == '__main__':
                 im = imread(im_path)
                 
                 # saturate image
-                # function definition
-        
+                for i in range(im.shape[0]):
+                    for j in range(im.shape[1]):
+                        for k in range(im.shape[2]):
+                            if im[i, j, k] > THRESHOLD:
+                                im[i, j, j] = 255
+                            else:
+                                im[i, j, k] = 0
+                
                 # Save image
                 imsave = (im_path, im)
     print("All images saturated successfully.")
