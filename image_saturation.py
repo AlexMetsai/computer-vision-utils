@@ -24,9 +24,9 @@ from scipy.misc import imsave, imread
 
 # Define saturation threshold
 THRESHOLD = 40
-# You can use other or a number of formats. To do
-# so, create a list, example: [".jpg", ".png"]
-ext = ".jpg" 
+# You can use other or a number of formats. To do so,
+# create a tuple/list, example: [".jpg", ".png"]
+ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 if __name__ == '__main__':
   
