@@ -30,6 +30,9 @@ def high_pass(im):
     highpass_im = im - lowpass_im
     return(highpass_im)
 
+# More image formats can be added, if necessary.
+ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
+
 if __name__ == '__main__':
   
     # Continue only if user replies "Yes"
@@ -42,7 +45,7 @@ if __name__ == '__main__':
     # through a high pass filter, replacing their originals.
     for root, dirs, files in os.walk("."):
         for f in files:
-            if f.endswith(".jpg"):
+            if f.endswith(ext):
                 
                 # load image
                 im_path = os.path.relpath(os.path.join(root, f), ".")
