@@ -26,19 +26,21 @@ import cv2, os
 if __name__ == '__main__':
 
     # Continue only if user replies "Yes"
-    print("\nThis script will create a separate directory for ALL *.mp4"+
+    print("\nThis script will create a separate directory for ALL video"+
       " files in your working dir!! Are you sure you want to continue? (y/n)")
     x = input()
     if (x!='y' and x!='Y'): exit()
     
+    # More video formats can be added, if necessary.
+    ext = (".mp4", ".mkv", ".avi", ".3gp", ".mov", ".flv")
+    
     # Create a separate directory for every video
     # and extract all of its frames inside.
     for file in os.listdir("."):
-        if file.endswith(".mp4"):
+        if file.endswith(ext):
             print("Processing " + file)
             video_capture = cv2.VideoCapture(file)
             sucess, image = video_capture.read()
-            folder_name = file.replace(".mp4", "")  # Delete the .mp4 ext
             os.mkdir(folder_name)
             count = 1
             success = True
