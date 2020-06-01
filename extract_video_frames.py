@@ -41,7 +41,8 @@ if __name__ == '__main__':
             print("Processing " + file)
             video_capture = cv2.VideoCapture(file)
             sucess, image = video_capture.read()
-            os.mkdir(folder_name)
+            folder_name = file#.replace(".mp4","")# no longer deleting extentions
+            os.mkdir(folder_name)                 # Create directory
             count = 1
             success = True
             while success:
