@@ -29,7 +29,7 @@ def rotate_90_degrees(folder_name, k=1):
     for file in os.listdir(folder_name):
         
         # read image from disc
-        im = cv2.imread(folder_name + "/" + file)
+        im = cv2.imread(os.path.join(folder_name, file))
         
         # rotate by 90 degrees
         # k is the number of rotations.
@@ -37,7 +37,7 @@ def rotate_90_degrees(folder_name, k=1):
         im = np.rot90(im, k)
         
         # replace the original wth the rotated image
-        cv2.imwrite(folder_name + "/" + file, im)
+        cv2.imwrite(os.path.join(folder_name, file), im)
     
         print("All images rotated successfully.")
 
@@ -47,14 +47,14 @@ def rotate_180_degrees(folder_name):
     for file in os.listdir(folder_name):
         
         # read image from disc
-        im = cv2.imread(folder_name + "/" + file)
+        im = cv2.imread(os.path.join(folder_name, file))
         
         # rotate by 180 degrees
         im = np.rot90(im)
         im = np.rot90(im)
         
         # replace the original with the rotated image
-        cv2.imwrite(folder_name + "/" + file, im)
+        cv2.imwrite(os.path.join(folder_name, file), im)
     
         print("All images rotated successfully.")
 
@@ -64,13 +64,13 @@ def horizontal_flip(folder_name):
     for file in os.listdir(folder_name):
         
         # read image from disc
-        im = cv2.imread(folder_name + "/" + file)
+        im = cv2.imread(os.path.join(folder_name, file))
         
         # flip horizontaly
         im = cv2.flip(im, 1)
         
         # replace the original with the fliped image
-        cv2.imwrite(folder_name + "/" + file, im)
+        cv2.imwrite(os.path.joing(folder_name, file), im)
         
         print("All images flipped successfully.")
 
@@ -80,13 +80,13 @@ def vertical_flip(folder_name):
     for file in os.listdir(folder_name):
         
         # read image from disc
-        im = cv2.imread(folder_name + "/" + file)
+        im = cv2.imread(os.path.joing(folder_name, file))
         
         # flip vertically
         im = cv2.flip(im, 0)
         
         # replace the original with the fliped image
-        cv2.imwrite(folder_name + "/" + file, im)
+        cv2.imwrite(os.path.join(folder_name, file), im)
         
         print("All images flipped successfully.")
 
