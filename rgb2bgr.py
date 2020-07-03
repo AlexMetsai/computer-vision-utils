@@ -23,7 +23,7 @@ import numpy as np
 import cv2
 import os
 from scipy import ndimage
-from scipy.misc import imsave, imread
+from imageio import imsave, imread
 
 if __name__ == '__main__':
   # TODO
