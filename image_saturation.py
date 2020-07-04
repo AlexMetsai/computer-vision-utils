@@ -20,7 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 
 import os
-from scipy.misc import imsave, imread
+from imageio import imsave, imread
 
 # Define saturation threshold
 THRESHOLD = 40
