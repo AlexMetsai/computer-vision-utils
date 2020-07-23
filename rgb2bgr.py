@@ -32,5 +32,26 @@ if __name__ == '__main__':
     x = input()
     if (x!='y' and x!="Y"): 
         exit()
+    
     # Find all files bellow the working directory and convert 
     # them to BGR, replacing their originals.
+    for root, dirs, files in os.walk("."):
+        for f in files:
+            if f.endswith(".jpg"):
+                
+                # load image
+                im_path = os.path.relpath(os.path.join(root, f), ".")
+                print("Resizing " + im_path)
+                im = imread(im_path)
+                
+                # RGB to BGR
+                bgr = np.zeros(im.shape, dtype=int)
+                bgr[:,:,:] = im[:,:,:]
+                bgr[:,:,0] = im[:,:,2]
+                bgr[:,:,1] = im[:,:,1]
+                bgr[:,:,2] = im[:,:,0]
+                
+                # Save image
+                imsave(im_path, bgr)
+                
+    print("Resized all frames successfully.")
