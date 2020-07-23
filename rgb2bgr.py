@@ -25,6 +25,8 @@ import os
 from scipy import ndimage
 from imageio import imsave, imread
 
+ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
+
 if __name__ == '__main__':
     # Continue only if user replies "Yes"
     print("\nThis script will recursively manipulate all images in your"+
@@ -37,7 +39,7 @@ if __name__ == '__main__':
     # them to BGR, replacing their originals.
     for root, dirs, files in os.walk("."):
         for f in files:
-            if f.endswith(".jpg"):
+            if f.endswith(ext):
                 
                 # load image
                 im_path = os.path.relpath(os.path.join(root, f), ".")
