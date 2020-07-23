@@ -26,5 +26,11 @@ from scipy import ndimage
 from imageio import imsave, imread
 
 if __name__ == '__main__':
-  # TODO
-  pass
+    # Continue only if user replies "Yes"
+    print("\nThis script will recursively manipulate all images in your"+
+          " current working directory. Are you sure you want to continue? (y/n)")
+    x = input()
+    if (x!='y' and x!="Y"): 
+        exit()
+    # Find all files bellow the working directory and convert 
+    # them to BGR, replacing their originals.
