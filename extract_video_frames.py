@@ -40,9 +40,9 @@ if __name__ == '__main__':
         if file.endswith(ext):
             print("Processing " + file)
             video_capture = cv2.VideoCapture(file)
-            sucess, image = video_capture.read()
-            folder_name = file#.replace(".mp4","")# no longer deleting extentions
-            os.mkdir(folder_name)                 # Create directory
+            success, image = video_capture.read()
+            folder_name = file #.replace(".mp4","")# no longer deleting extentions
+            os.mkdir(folder_name)                  # Create directory
             count = 1
             success = True
             while success:
