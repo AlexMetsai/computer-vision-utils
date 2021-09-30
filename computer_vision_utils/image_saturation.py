@@ -20,6 +20,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import os
+import cv2
 
 from imageio import imread, imwrite
 
@@ -49,6 +50,10 @@ def saturate_images(folder, ext=extensions, threshold=40):
                 print("Saturating", im_path)
                 im = imread(im_path)
 
+                # Cover the case where the image is PNG by converting the image from RGBA to RGB.
+                if len(im.shape) > 2 and im.shape[2] == 4:
+                    im = cv2.cvtColor(im, cv2.COLOR_BGRA2BGR)
+
                 # Saturate image
                 # In the future, I should NOT be lazy and do this in a way more efficient than a triple loop.
                 for i in range(im.shape[0]):
@@ -72,7 +77,7 @@ if __name__ == '__main__':
     if x not in ['y', "Y"]:
         exit()
   
-    working_dir = '../dummy_folder'
+    working_dir = 'dummy_folder'
     saturate_images(working_dir)
 
     print("All images saturated successfully.")
