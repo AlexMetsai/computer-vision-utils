@@ -29,7 +29,7 @@ from imageio import imread, imwrite
 extensions = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 
-def saturate_images(folder, ext=extensions, threshold=40):
+def saturate_images(folder, ext=extensions, threshold=200):
     """
     Find all image bellow the provided directory and apply saturation using a
     threshold value. The original images are replaced.
@@ -55,14 +55,7 @@ def saturate_images(folder, ext=extensions, threshold=40):
                     im = cv2.cvtColor(im, cv2.COLOR_BGRA2BGR)
 
                 # Saturate image
-                # In the future, I should NOT be lazy and do this in a way more efficient than a triple loop.
-                for i in range(im.shape[0]):
-                    for j in range(im.shape[1]):
-                        for k in range(im.shape[2]):
-                            if im[i, j, k] > threshold:
-                                im[i, j, j] = 255
-                            else:
-                                im[i, j, k] = 0
+                im = (im > threshold) * im
 
                 # Save image
                 imwrite(im_path, im)
