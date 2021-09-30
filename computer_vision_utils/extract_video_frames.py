@@ -62,7 +62,7 @@ if __name__ == '__main__':
     print("\nThis script will create a separate directory for all video" +
           " files under your working directory. Are you sure you want to continue? (y/n)")
     x = input()
-    if x != 'y' and x != 'Y':
+    if x not in ['y', 'Y']:
         exit()
     
     working_dir = 'dummy_folder'

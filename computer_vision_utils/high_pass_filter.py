@@ -50,7 +50,7 @@ def high_pass(folder, ext=extensions):
 
     :param folder: The provided directory.
     :param ext: Supported image file formats.
-    :return None:
+    :return None: The processed images replace the originals.
     """
 
     for root, dirs, files in os.walk(folder):
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     print("\nThis script will recursively manipulate all images under your" +
           " current working directory. Are you sure you want to continue? (y/n)")
     x = input()
-    if x != 'y' and x != "Y":
+    if x not in ['y', 'Y']:
         exit()
 
     working_dir = 'dummy_folder'
