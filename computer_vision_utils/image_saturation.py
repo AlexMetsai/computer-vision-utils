@@ -1,5 +1,5 @@
 """
-Search recursively for all images in the current working directory 
+Search recursively for all images in the provided directory
 and apply saturation, with regard to a user defined threshold.
 
 Copyright (C) 2019 - 2021 Alexandros I. Metsai
