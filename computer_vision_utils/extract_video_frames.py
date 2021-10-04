@@ -1,5 +1,5 @@
 """
-Extract the frames of all videos in the current working directory.
+Extract the frames of all videos in the provided directory.
 A separate folder is created for each video, where frames are extracted.
 If "Folder exists" we chose NOT to replace it, but instead display the
 "FileExistsError". This will avoid potential loss of files.
