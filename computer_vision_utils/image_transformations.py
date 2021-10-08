@@ -1,5 +1,5 @@
 """
-Transform all images/frames inside a specific fodler.
+Transform all images/frames inside a specific folder.
 These transformations include rotations and flips.
 
 Copyright (C) 2019 - 2021 Alexandros I. Metsai
@@ -29,7 +29,13 @@ extensions = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 
 def rotate_90_degrees(folder_name, k=1, ext=extensions):
+    """
 
+    :param folder_name: The parent folder containing the images.
+    :param k: The number of rotations, negative values signify negative rotation.
+    :param ext: Supported image file formats.
+    :return None: The processed images replace the originals.
+    """
     for file in os.listdir(folder_name):
         if file.endswith(ext):
 
@@ -37,8 +43,6 @@ def rotate_90_degrees(folder_name, k=1, ext=extensions):
             im = cv2.imread(os.path.join(folder_name, file))
 
             # rotate by 90 degrees
-            # k is the number of rotations.
-            # pass k = -1 for negative rotation
             im = np.rot90(im, k)
 
             # replace the original wth the rotated image
@@ -48,9 +52,15 @@ def rotate_90_degrees(folder_name, k=1, ext=extensions):
 
 
 def rotate_180_degrees(folder_name, ext=extensions):
+    """
 
+    :param folder_name: The parent folder containing the images.
+    :param ext: Supported image file formats.
+    :return None: The processed images replace the originals.
+    """
     for file in os.listdir(folder_name):
         if file.endswith(ext):
+
             # read image from disc
             im = cv2.imread(os.path.join(folder_name, file))
 
@@ -65,7 +75,12 @@ def rotate_180_degrees(folder_name, ext=extensions):
 
 
 def horizontal_flip(folder_name, ext=extensions):
+    """
 
+    :param folder_name: The parent folder containing the images.
+    :param ext: Supported image file formats.
+    :return None: The processed images replace the originals.
+    """
     for file in os.listdir(folder_name):
         if file.endswith(ext):
 
@@ -75,23 +90,29 @@ def horizontal_flip(folder_name, ext=extensions):
             # flip horizontaly
             im = cv2.flip(im, 1)
 
-            # replace the original with the fliped image
+            # replace the original with the flipped image
             cv2.imwrite(os.path.join(folder_name, file), im)
 
             print("All images flipped successfully.")
 
 
 def vertical_flip(folder_name, ext=extensions):
+    """
 
+    :param folder_name: The parent folder containing the images.
+    :param ext: Supported image file formats.
+    :return None: The processed images replace the originals.
+    """
     for file in os.listdir(folder_name):
         if file.endswith(ext):
+
             # read image from disc
             im = cv2.imread(os.path.join(folder_name, file))
 
             # flip vertically
             im = cv2.flip(im, 0)
 
-            # replace the original with the fliped image
+            # replace the original with the flipped image
             cv2.imwrite(os.path.join(folder_name, file), im)
 
             print("All images flipped successfully.")
