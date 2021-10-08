@@ -24,72 +24,77 @@ import numpy as np
 import cv2
 import os
 
+# Supported image formats. More can be added, if necessary.
+extensions = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
-def rotate_90_degrees(folder_name, k=1):
-    
+
+def rotate_90_degrees(folder_name, k=1, ext=extensions):
+
     for file in os.listdir(folder_name):
-        
-        # read image from disc
-        im = cv2.imread(os.path.join(folder_name, file))
-        
-        # rotate by 90 degrees
-        # k is the number of rotations.
-        # pass k = -1 for negative rotation
-        im = np.rot90(im, k)
-        
-        # replace the original wth the rotated image
-        cv2.imwrite(os.path.join(folder_name, file), im)
-    
-        print("All images rotated successfully.")
+        if file.endswith(ext):
+
+            # read image from disc
+            im = cv2.imread(os.path.join(folder_name, file))
+
+            # rotate by 90 degrees
+            # k is the number of rotations.
+            # pass k = -1 for negative rotation
+            im = np.rot90(im, k)
+
+            # replace the original wth the rotated image
+            cv2.imwrite(os.path.join(folder_name, file), im)
+
+            print("All images rotated successfully.")
 
 
-def rotate_180_degrees(folder_name):
-  
+def rotate_180_degrees(folder_name, ext=extensions):
+
     for file in os.listdir(folder_name):
-        
-        # read image from disc
-        im = cv2.imread(os.path.join(folder_name, file))
-        
-        # rotate by 180 degrees
-        im = np.rot90(im)
-        im = np.rot90(im)
-        
-        # replace the original with the rotated image
-        cv2.imwrite(os.path.join(folder_name, file), im)
-    
-        print("All images rotated successfully.")
+        if file.endswith(ext):
+            # read image from disc
+            im = cv2.imread(os.path.join(folder_name, file))
+
+            # rotate by 180 degrees
+            im = np.rot90(im)
+            im = np.rot90(im)
+
+            # replace the original with the rotated image
+            cv2.imwrite(os.path.join(folder_name, file), im)
+
+            print("All images rotated successfully.")
 
 
-def horizontal_flip(folder_name):
-    
+def horizontal_flip(folder_name, ext=extensions):
+
     for file in os.listdir(folder_name):
-        
-        # read image from disc
-        im = cv2.imread(os.path.join(folder_name, file))
-        
-        # flip horizontaly
-        im = cv2.flip(im, 1)
-        
-        # replace the original with the fliped image
-        cv2.imwrite(os.path.join(folder_name, file), im)
-        
-        print("All images flipped successfully.")
+        if file.endswith(ext):
+
+            # read image from disc
+            im = cv2.imread(os.path.join(folder_name, file))
+
+            # flip horizontaly
+            im = cv2.flip(im, 1)
+
+            # replace the original with the fliped image
+            cv2.imwrite(os.path.join(folder_name, file), im)
+
+            print("All images flipped successfully.")
 
 
-def vertical_flip(folder_name):
-    
+def vertical_flip(folder_name, ext=extensions):
+
     for file in os.listdir(folder_name):
-        
-        # read image from disc
-        im = cv2.imread(os.path.join(folder_name, file))
-        
-        # flip vertically
-        im = cv2.flip(im, 0)
-        
-        # replace the original with the fliped image
-        cv2.imwrite(os.path.join(folder_name, file), im)
-        
-        print("All images flipped successfully.")
+        if file.endswith(ext):
+            # read image from disc
+            im = cv2.imread(os.path.join(folder_name, file))
+
+            # flip vertically
+            im = cv2.flip(im, 0)
+
+            # replace the original with the fliped image
+            cv2.imwrite(os.path.join(folder_name, file), im)
+
+            print("All images flipped successfully.")
 
 
 if __name__ == "__main__":
