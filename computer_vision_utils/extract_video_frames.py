@@ -46,7 +46,7 @@ def extract_video_frames(folder, ext=extensions):
             print("Processing " + file)
             video_capture = cv2.VideoCapture(os.path.join(folder, file))
             success, image = video_capture.read()
-            folder_name = os.path.join(folder, file + "_frames")  # .replace(".mp4","")  # no longer deleting extentions
+            folder_name = os.path.join(folder, file + "_frames")
             os.mkdir(folder_name)  # Create directory
             count = 1
             success = True
