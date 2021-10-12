@@ -4,7 +4,7 @@
 # There is no need for a hash-bang #! specifying the shell's
 # type, the script will work for most standard shells.
 #
-# Copyright (C) 2019 Alexandros I. Metsai
+# Copyright (C) 2019 - 2021 Alexandros I. Metsai
 # alexmetsai@gmail.com
 #
 # This program is free software; you can redistribute it and/or
