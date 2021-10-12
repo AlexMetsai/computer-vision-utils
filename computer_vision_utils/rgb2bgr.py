@@ -1,4 +1,4 @@
-'''
+"""
 Convert all images current working dir to BGR.
 If images are already in BGR, they will be converted to RGB.
 
@@ -17,15 +17,16 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-'''
+"""
 
-import numpy as np
-import cv2
 import os
-from scipy import ndimage
+import numpy as np
+
 from imageio import imsave, imread
 
+
 ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
+
 
 if __name__ == '__main__':
     # Continue only if user replies "Yes"
@@ -37,12 +38,12 @@ if __name__ == '__main__':
     
     # Find all files bellow the working directory and convert 
     # them to BGR, replacing their originals.
-    for root, dirs, files in os.walk("."):
+    for root, dirs, files in os.walk(".."):
         for f in files:
             if f.endswith(ext):
                 
                 # load image
-                im_path = os.path.relpath(os.path.join(root, f), ".")
+                im_path = os.path.relpath(os.path.join(root, f), "..")
                 print("Resizing " + im_path)
                 im = imread(im_path)
                 
