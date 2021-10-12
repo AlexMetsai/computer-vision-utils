@@ -47,7 +47,7 @@ def extract_video_frames(folder, ext=extensions):
             video_capture = cv2.VideoCapture(os.path.join(folder, file))
             success, image = video_capture.read()
             folder_name = os.path.join(folder, file + "_frames")
-            os.mkdir(folder_name)  # Create directory
+            os.mkdir(folder_name)
             count = 1
             success = True
             while success:
