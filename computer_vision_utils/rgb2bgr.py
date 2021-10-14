@@ -2,7 +2,7 @@
 Convert all images current working dir to BGR.
 If images are already in BGR, they will be converted to RGB.
 
-Copyright (C) 2019 Alexandros I. Metsai
+Copyright (C) 2019 - 2021 Alexandros I. Metsai
 alexmetsai@gmail.com
 
 This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     print("\nThis script will recursively manipulate all images in your"+
           " current working directory. Are you sure you want to continue? (y/n)")
     x = input()
-    if (x!='y' and x!="Y"): 
+    if x != 'y' and x != "Y":
         exit()
     
     # Find all files bellow the working directory and convert 
@@ -49,10 +49,10 @@ if __name__ == '__main__':
                 
                 # RGB to BGR
                 bgr = np.zeros(im.shape, dtype=int)
-                bgr[:,:,:] = im[:,:,:]
-                bgr[:,:,0] = im[:,:,2]
-                bgr[:,:,1] = im[:,:,1]
-                bgr[:,:,2] = im[:,:,0]
+                bgr[:, :, :] = im[:, :, :]
+                bgr[:, :, 0] = im[:, :, 2]
+                bgr[:, :, 1] = im[:, :, 1]
+                bgr[:, :, 2] = im[:, :, 0]
                 
                 # Save image
                 imsave(im_path, bgr)
