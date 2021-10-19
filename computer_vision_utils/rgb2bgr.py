@@ -28,6 +28,17 @@ from imageio import imsave, imread
 ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 
+def rgb2bgr(im):
+    bgr = np.zeros(im.shape, dtype=int)
+
+    bgr[:, :, :] = im[:, :, :]
+    bgr[:, :, 0] = im[:, :, 2]
+    bgr[:, :, 1] = im[:, :, 1]
+    bgr[:, :, 2] = im[:, :, 0]
+
+    return bgr
+
+
 if __name__ == '__main__':
     # Continue only if user replies "Yes"
     print("\nThis script will recursively manipulate all images in your"+
@@ -48,13 +59,9 @@ if __name__ == '__main__':
                 im = imread(im_path)
                 
                 # RGB to BGR
-                bgr = np.zeros(im.shape, dtype=int)
-                bgr[:, :, :] = im[:, :, :]
-                bgr[:, :, 0] = im[:, :, 2]
-                bgr[:, :, 1] = im[:, :, 1]
-                bgr[:, :, 2] = im[:, :, 0]
+                bgr_im = rgb2bgr(im)
                 
                 # Save image
-                imsave(im_path, bgr)
+                imsave(im_path, bgr_im)
                 
     print("Resized all frames successfully.")
