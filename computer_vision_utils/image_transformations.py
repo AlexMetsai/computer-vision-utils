@@ -101,7 +101,7 @@ class Rotate:
                 # replace the original wth the rotated image
                 cv2.imwrite(os.path.join(folder_name, file), im)
 
-                print("All images rotated successfully.")
+        print("All images rotated successfully.")
 
     @staticmethod
     def rotate_180_degrees(folder_name, ext=extensions):
@@ -123,7 +123,7 @@ class Rotate:
                 # replace the original with the rotated image
                 cv2.imwrite(os.path.join(folder_name, file), im)
 
-                print("All images rotated successfully.")
+        print("All images rotated successfully.")
 
 
 if __name__ == "__main__":
