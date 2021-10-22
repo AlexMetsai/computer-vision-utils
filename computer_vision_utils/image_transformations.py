@@ -28,6 +28,52 @@ import os
 extensions = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 
+class Flip:
+    """
+    Container class for flipping collections of images.
+    """
+
+    def horizontal_flip(folder_name, ext=extensions):
+        """
+
+        :param folder_name: The parent folder containing the images.
+        :param ext: Supported image file formats.
+        :return None: The processed images replace the originals.
+        """
+        for file in os.listdir(folder_name):
+            if file.endswith(ext):
+                # read image from disc
+                im = cv2.imread(os.path.join(folder_name, file))
+
+                # flip horizontaly
+                im = cv2.flip(im, 1)
+
+                # replace the original with the flipped image
+                cv2.imwrite(os.path.join(folder_name, file), im)
+
+                print("All images flipped successfully.")
+
+    def vertical_flip(folder_name, ext=extensions):
+        """
+
+        :param folder_name: The parent folder containing the images.
+        :param ext: Supported image file formats.
+        :return None: The processed images replace the originals.
+        """
+        for file in os.listdir(folder_name):
+            if file.endswith(ext):
+                # read image from disc
+                im = cv2.imread(os.path.join(folder_name, file))
+
+                # flip vertically
+                im = cv2.flip(im, 0)
+
+                # replace the original with the flipped image
+                cv2.imwrite(os.path.join(folder_name, file), im)
+
+                print("All images flipped successfully.")
+
+
 def rotate_90_degrees(folder_name, k=1, ext=extensions):
     """
 
@@ -72,50 +118,6 @@ def rotate_180_degrees(folder_name, ext=extensions):
             cv2.imwrite(os.path.join(folder_name, file), im)
 
             print("All images rotated successfully.")
-
-
-def horizontal_flip(folder_name, ext=extensions):
-    """
-
-    :param folder_name: The parent folder containing the images.
-    :param ext: Supported image file formats.
-    :return None: The processed images replace the originals.
-    """
-    for file in os.listdir(folder_name):
-        if file.endswith(ext):
-
-            # read image from disc
-            im = cv2.imread(os.path.join(folder_name, file))
-
-            # flip horizontaly
-            im = cv2.flip(im, 1)
-
-            # replace the original with the flipped image
-            cv2.imwrite(os.path.join(folder_name, file), im)
-
-            print("All images flipped successfully.")
-
-
-def vertical_flip(folder_name, ext=extensions):
-    """
-
-    :param folder_name: The parent folder containing the images.
-    :param ext: Supported image file formats.
-    :return None: The processed images replace the originals.
-    """
-    for file in os.listdir(folder_name):
-        if file.endswith(ext):
-
-            # read image from disc
-            im = cv2.imread(os.path.join(folder_name, file))
-
-            # flip vertically
-            im = cv2.flip(im, 0)
-
-            # replace the original with the flipped image
-            cv2.imwrite(os.path.join(folder_name, file), im)
-
-            print("All images flipped successfully.")
 
 
 if __name__ == "__main__":
