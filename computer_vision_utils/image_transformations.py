@@ -33,6 +33,7 @@ class Flip:
     Container class for flipping collections of images.
     """
 
+    @staticmethod
     def horizontal_flip(folder_name, ext=extensions):
         """
 
@@ -53,6 +54,7 @@ class Flip:
 
                 print("All images flipped successfully.")
 
+    @staticmethod
     def vertical_flip(folder_name, ext=extensions):
         """
 
