@@ -52,7 +52,7 @@ class Flip:
                 # replace the original with the flipped image
                 cv2.imwrite(os.path.join(folder_name, file), im)
 
-                print("All images flipped successfully.")
+        print("All images flipped successfully.")
 
     @staticmethod
     def vertical_flip(folder_name, ext=extensions):
@@ -73,7 +73,7 @@ class Flip:
                 # replace the original with the flipped image
                 cv2.imwrite(os.path.join(folder_name, file), im)
 
-                print("All images flipped successfully.")
+        print("All images flipped successfully.")
 
 
 def rotate_90_degrees(folder_name, k=1, ext=extensions):
