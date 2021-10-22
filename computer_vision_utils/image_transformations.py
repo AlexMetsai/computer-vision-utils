@@ -76,50 +76,54 @@ class Flip:
         print("All images flipped successfully.")
 
 
-def rotate_90_degrees(folder_name, k=1, ext=extensions):
+class Rotate:
+    """
+    Container class for rotating collections of images.
     """
 
-    :param folder_name: The parent folder containing the images.
-    :param k: The number of rotations, negative values signify negative rotation.
-    :param ext: Supported image file formats.
-    :return None: The processed images replace the originals.
-    """
-    for file in os.listdir(folder_name):
-        if file.endswith(ext):
+    @staticmethod
+    def rotate_90_degrees(folder_name, k=1, ext=extensions):
+        """
 
-            # read image from disc
-            im = cv2.imread(os.path.join(folder_name, file))
+        :param folder_name: The parent folder containing the images.
+        :param k: The number of rotations, negative values signify negative rotation.
+        :param ext: Supported image file formats.
+        :return None: The processed images replace the originals.
+        """
+        for file in os.listdir(folder_name):
+            if file.endswith(ext):
+                # read image from disc
+                im = cv2.imread(os.path.join(folder_name, file))
 
-            # rotate by 90 degrees
-            im = np.rot90(im, k)
+                # rotate by 90 degrees
+                im = np.rot90(im, k)
 
-            # replace the original wth the rotated image
-            cv2.imwrite(os.path.join(folder_name, file), im)
+                # replace the original wth the rotated image
+                cv2.imwrite(os.path.join(folder_name, file), im)
 
-            print("All images rotated successfully.")
+                print("All images rotated successfully.")
 
+    @staticmethod
+    def rotate_180_degrees(folder_name, ext=extensions):
+        """
 
-def rotate_180_degrees(folder_name, ext=extensions):
-    """
+        :param folder_name: The parent folder containing the images.
+        :param ext: Supported image file formats.
+        :return None: The processed images replace the originals.
+        """
+        for file in os.listdir(folder_name):
+            if file.endswith(ext):
+                # read image from disc
+                im = cv2.imread(os.path.join(folder_name, file))
 
-    :param folder_name: The parent folder containing the images.
-    :param ext: Supported image file formats.
-    :return None: The processed images replace the originals.
-    """
-    for file in os.listdir(folder_name):
-        if file.endswith(ext):
+                # rotate by 180 degrees
+                im = np.rot90(im)
+                im = np.rot90(im)
 
-            # read image from disc
-            im = cv2.imread(os.path.join(folder_name, file))
+                # replace the original with the rotated image
+                cv2.imwrite(os.path.join(folder_name, file), im)
 
-            # rotate by 180 degrees
-            im = np.rot90(im)
-            im = np.rot90(im)
-
-            # replace the original with the rotated image
-            cv2.imwrite(os.path.join(folder_name, file), im)
-
-            print("All images rotated successfully.")
+                print("All images rotated successfully.")
 
 
 if __name__ == "__main__":
