@@ -123,4 +123,6 @@ def rotate_180_degrees(folder_name, ext=extensions):
 
 
 if __name__ == "__main__":
-    pass
+    folder = '../dummy'
+    Flip.horizontal_flip(folder)
+    Flip.vertical_flip(folder)
