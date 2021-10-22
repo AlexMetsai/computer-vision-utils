@@ -130,3 +130,5 @@ if __name__ == "__main__":
     folder = '../dummy'
     Flip.horizontal_flip(folder)
     Flip.vertical_flip(folder)
+    Rotate.rotate_90_degrees(folder)
+    Rotate.rotate_180_degrees(folder)
