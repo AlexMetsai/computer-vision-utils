@@ -39,7 +39,7 @@ def rgb2bgr(im):
     return bgr
 
 
-if __name__ == '__main__':
+def bgr2rgb_folder():
     # Continue only if user replies "Yes"
     print("\nThis script will recursively manipulate all images in your"+
           " current working directory. Are you sure you want to continue? (y/n)")
@@ -65,3 +65,7 @@ if __name__ == '__main__':
                 imsave(im_path, bgr_im)
                 
     print("Resized all frames successfully.")
+
+
+if __name__ == '__main__':
+    pass
