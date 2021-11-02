@@ -40,7 +40,15 @@ def rgb2bgr(im):
 
 
 def bgr2rgb_folder(folder, ext=extensions):
-    
+    """
+    Find all images bellow the provided directory and convert them
+    from RGB to BGR, replacing their originals.
+
+    :param folder: The provided directory.
+    :param ext: Supported image file formats.
+    :return None: The processed images replace the originals.
+    """
+
     # Find all files bellow the working directory and convert 
     # them to BGR, replacing their originals.
     for root, dirs, files in os.walk(folder):
