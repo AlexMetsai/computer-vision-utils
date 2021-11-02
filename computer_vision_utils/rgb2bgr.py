@@ -25,7 +25,7 @@ import numpy as np
 from imageio import imsave, imread
 
 
-ext = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
+extensions = (".jpg", ".jpeg", ".png", ".bmp", ".gif")
 
 
 def rgb2bgr(im):
@@ -39,22 +39,16 @@ def rgb2bgr(im):
     return bgr
 
 
-def bgr2rgb_folder():
-    # Continue only if user replies "Yes"
-    print("\nThis script will recursively manipulate all images in your"+
-          " current working directory. Are you sure you want to continue? (y/n)")
-    x = input()
-    if x != 'y' and x != "Y":
-        exit()
+def bgr2rgb_folder(folder, ext=extensions):
     
     # Find all files bellow the working directory and convert 
     # them to BGR, replacing their originals.
-    for root, dirs, files in os.walk(".."):
+    for root, dirs, files in os.walk(folder):
         for f in files:
             if f.endswith(ext):
                 
                 # load image
-                im_path = os.path.relpath(os.path.join(root, f), "..")
+                im_path = os.path.join(os.path.join(root, f))
                 print("Resizing " + im_path)
                 im = imread(im_path)
                 
