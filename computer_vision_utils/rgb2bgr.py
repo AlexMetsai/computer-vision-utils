@@ -64,8 +64,6 @@ def bgr2rgb_folder(folder, ext=extensions):
                 
                 # Save image
                 imsave(im_path, bgr_im)
-                
-    print("Converted all images successfully.")
 
 
 if __name__ == '__main__':

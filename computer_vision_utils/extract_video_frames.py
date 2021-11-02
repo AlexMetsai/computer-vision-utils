@@ -2,7 +2,7 @@
 Extract the frames of all videos in the provided directory.
 A separate folder is created for each video, where frames are extracted.
 If "Folder exists" we chose NOT to replace it, but instead display the
-"FileExistsError". This will avoid potential loss of files.
+"FileExistsError". This will avoid potential loss of data.
 
 Copyright (C) 2019 - 2021 Alexandros I. Metsai
 alexmetsai@gmail.com
