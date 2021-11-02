@@ -61,4 +61,15 @@ def bgr2rgb_folder(folder, ext=extensions):
 
 
 if __name__ == '__main__':
-    pass
+
+    # Continue only if user replies "Yes"
+    print("\nThis script will recursively manipulate all images under your" +
+          " current working directory. Are you sure you want to continue? (y/n)")
+    x = input()
+    if x not in ['y', 'Y']:
+        exit()
+
+    working_dir = 'dummy_folder'
+    bgr2rgb_folder(working_dir)
+
+    print("All images processed successfully.")
