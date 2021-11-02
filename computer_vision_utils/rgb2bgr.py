@@ -49,7 +49,6 @@ def bgr2rgb_folder(folder, ext=extensions):
                 
                 # load image
                 im_path = os.path.join(os.path.join(root, f))
-                print("Resizing " + im_path)
                 im = imread(im_path)
                 
                 # RGB to BGR
@@ -58,7 +57,7 @@ def bgr2rgb_folder(folder, ext=extensions):
                 # Save image
                 imsave(im_path, bgr_im)
                 
-    print("Resized all frames successfully.")
+    print("Converted all images successfully.")
 
 
 if __name__ == '__main__':

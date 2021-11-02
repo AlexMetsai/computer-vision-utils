@@ -58,7 +58,6 @@ def high_pass(folder, ext=extensions):
             if f.endswith(ext):
                 # load image
                 im_path = os.path.join(os.path.join(root, f))
-                print("Filtering", im_path)
                 im = imread(im_path)
 
                 # apply the high pass filter
